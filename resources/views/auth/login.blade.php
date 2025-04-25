@@ -31,15 +31,14 @@
             justify-content: center;
             align-items: center;
             padding: 20px;
-
         }
 
         .login-card {
-            width: 40%;
-            min-width: 600px;
+            width: 100%;
+            max-width: 450px;
             background: rgba(255, 255, 255, 0.95);
             border-radius: 24px;
-            padding: 48px;
+            padding: 30px;
             box-shadow:
                 0 10px 30px rgba(0, 0, 0, 0.1),
                 0 0 0 1px rgba(255, 255, 255, 0.2);
@@ -48,6 +47,12 @@
             transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
             position: relative;
             overflow: hidden;
+        }
+
+        @media (min-width: 768px) {
+            .login-card {
+                padding: 48px;
+            }
         }
 
         .login-card:hover {
@@ -84,8 +89,8 @@
         }
 
         .logo-circle {
-            width: 100px;
-            height: 100px;
+            width: 80px;
+            height: 80px;
             background: linear-gradient(45deg, var(--primary), var(--secondary));
             border-radius: 50%;
             margin: 0 auto 20px;
@@ -94,6 +99,14 @@
             justify-content: center;
             box-shadow: 0 10px 25px rgba(108, 92, 231, 0.4);
             transition: transform 0.5s ease;
+            animation: float 4s ease-in-out infinite;
+        }
+
+        @media (min-width: 768px) {
+            .logo-circle {
+                width: 100px;
+                height: 100px;
+            }
         }
 
         .logo-circle:hover {
@@ -101,16 +114,28 @@
         }
 
         .logo-circle i {
-            font-size: 48px;
+            font-size: 36px;
             color: white;
+        }
+
+        @media (min-width: 768px) {
+            .logo-circle i {
+                font-size: 48px;
+            }
         }
 
         .logo-section h1 {
             color: var(--dark);
-            font-size: 28px;
+            font-size: 24px;
             font-weight: 700;
             margin-top: 16px;
             letter-spacing: -0.5px;
+        }
+
+        @media (min-width: 768px) {
+            .logo-section h1 {
+                font-size: 28px;
+            }
         }
 
         .logo-section p {
@@ -120,23 +145,31 @@
         }
 
         .input-group {
-            margin-bottom: 28px;
+            margin-bottom: 24px;
             position: relative;
         }
 
         .input-field {
             width: 100%;
-            padding: 18px 24px;
+            padding: 16px 20px;
             border: none;
             background: rgba(245, 246, 250, 0.8);
             border-radius: 12px;
-            font-size: 16px;
+            font-size: 15px;
             color: var(--dark);
             box-shadow:
                 inset 0 1px 3px rgba(0, 0, 0, 0.05),
                 0 5px 15px rgba(0, 0, 0, 0.03);
             transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
-            padding-left: 52px;
+            padding-left: 48px;
+        }
+
+        @media (min-width: 768px) {
+            .input-field {
+                padding: 18px 24px;
+                padding-left: 52px;
+                font-size: 16px;
+            }
         }
 
         .input-field:focus {
@@ -149,11 +182,17 @@
 
         .input-icon {
             position: absolute;
-            left: 20px;
+            left: 16px;
             top: 50%;
             transform: translateY(-50%);
             color: #999;
             transition: all 0.3s;
+        }
+
+        @media (min-width: 768px) {
+            .input-icon {
+                left: 20px;
+            }
         }
 
         .input-field:focus+.input-icon {
@@ -162,18 +201,26 @@
 
         .input-label {
             position: absolute;
-            left: 52px;
-            top: 18px;
+            left: 48px;
+            top: 16px;
             color: #777;
-            font-size: 16px;
+            font-size: 15px;
             pointer-events: none;
             transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+        }
+
+        @media (min-width: 768px) {
+            .input-label {
+                left: 52px;
+                top: 18px;
+                font-size: 16px;
+            }
         }
 
         .input-field:focus~.input-label,
         .input-field:not(:placeholder-shown)~.input-label {
             top: -10px;
-            left: 52px;
+            left: 16px;
             font-size: 12px;
             background: white;
             padding: 0 8px;
@@ -181,12 +228,28 @@
             font-weight: 500;
         }
 
+        @media (min-width: 768px) {
+            .input-field:focus~.input-label,
+            .input-field:not(:placeholder-shown)~.input-label {
+                left: 20px;
+            }
+        }
+
         .utility-section {
             display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 30px;
+            flex-direction: column;
+            gap: 12px;
+            margin-bottom: 24px;
             font-size: 14px;
+        }
+
+        @media (min-width: 480px) {
+            .utility-section {
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: center;
+                margin-bottom: 30px;
+            }
         }
 
         .remember-me {
@@ -239,7 +302,7 @@
 
         .login-button {
             width: 100%;
-            padding: 18px;
+            padding: 16px;
             border: none;
             background: linear-gradient(45deg, var(--primary), var(--secondary));
             color: white;
@@ -251,6 +314,12 @@
             box-shadow: 0 5px 15px rgba(108, 92, 231, 0.4);
             position: relative;
             overflow: hidden;
+        }
+
+        @media (min-width: 768px) {
+            .login-button {
+                padding: 18px;
+            }
         }
 
         .login-button::before {
@@ -280,91 +349,11 @@
             transform: translateY(0);
         }
 
-        .divider {
-            display: flex;
-            align-items: center;
-            margin: 30px 0;
-            color: #999;
-            font-size: 14px;
-        }
-
-        .divider::before,
-        .divider::after {
-            content: '';
-            flex: 1;
-            height: 1px;
-            background: linear-gradient(90deg, transparent, #ddd, transparent);
-        }
-
-        .divider::before {
-            margin-right: 16px;
-        }
-
-        .divider::after {
-            margin-left: 16px;
-        }
-
-        .social-login {
-            display: flex;
-            justify-content: center;
-            gap: 16px;
-            margin-bottom: 30px;
-        }
-
-        .social-btn {
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background: white;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-            transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
-            color: white;
-            font-size: 20px;
-            text-decoration: none;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .social-btn::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.3), transparent);
-            transform: translateX(-100%);
-            transition: 0.5s;
-        }
-
-        .social-btn:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
-        }
-
-        .social-btn:hover::before {
-            transform: translateX(100%);
-        }
-
-        .social-btn.google {
-            background: linear-gradient(45deg, #4285F4, #34A853);
-        }
-
-        .social-btn.facebook {
-            background: linear-gradient(45deg, #3b5998, #4267B2);
-        }
-
-        .social-btn.apple {
-            background: linear-gradient(45deg, #000000, #333333);
-        }
-
         .register-link {
             text-align: center;
             color: #666;
             font-size: 14px;
+            margin-top: 24px;
             cursor: pointer;
         }
 
@@ -413,36 +402,12 @@
             }
         }
 
-        .logo-circle {
-            animation: float 4s ease-in-out infinite;
-        }
-
-        /* Responsive */
-        @media (max-width: 600px) {
-            .login-card {
-                padding: 36px 24px;
-            }
-
-            .logo-circle {
-                width: 80px;
-                height: 80px;
-            }
-
-            .logo-circle i {
-                font-size: 36px;
-            }
-
-            .input-field {
-                padding: 16px 20px 16px 48px;
-            }
-        }
-
         /* Efecto de error/success */
         .error-message {
             color: var(--error);
             font-size: 13px;
             margin-top: 5px;
-            display: none;
+            display: block;
         }
 
         .input-group.error .input-field {
@@ -451,10 +416,6 @@
 
         .input-group.error .input-icon {
             color: var(--error);
-        }
-
-        .input-group.error .error-message {
-            display: block;
         }
 
         .input-group.success .input-field {
@@ -480,33 +441,33 @@
 
             <form id="loginForm" method="POST" action="{{ route('login') }}">
                 @csrf
-                <div class="input-group">
+                <div class="input-group @error('email') error @enderror">
                     <input type="email" id="email" class="input-field" name="email" value="{{ old('email') }}"
-                        required autocomplete="email" autofocus>
+                        required autocomplete="email" autofocus placeholder=" ">
                     <i class="fas fa-envelope input-icon"></i>
                     <label for="email" class="input-label">Correo electrónico</label>
                     @error('email')
                         <span class="error-message" role="alert">
-                            <strong>{{ $message }}</strong>
+                            {{ $message }}
                         </span>
                     @enderror
                 </div>
 
-                <div class="input-group">
+                <div class="input-group @error('password') error @enderror">
                     <input type="password" id="password" class="input-field" name="password" required
-                        autocomplete="current-password" minlength="6">
+                        autocomplete="current-password" minlength="6" placeholder=" ">
                     <i class="fas fa-lock input-icon"></i>
                     <label for="password" class="input-label">Contraseña</label>
                     @error('password')
                         <span class="error-message" role="alert">
-                            <strong>{{ $message }}</strong>
+                            {{ $message }}
                         </span>
                     @enderror
                 </div>
 
                 <div class="utility-section">
                     <label class="remember-me">
-                        <input  type="checkbox" name="remember" id="remember">
+                        <input type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
                         <span>Recordar sesión</span>
                     </label>
                     <div class="forgot-password">
@@ -519,14 +480,11 @@
                 </button>
             </form>
 
-            <br>
             <div class="register-link">
                 <p>¿No tienes una cuenta? <a href="{{ route('register') }}">Regístrate ahora</a></p>
             </div>
         </div>
     </div>
-
-
 </body>
 
 </html>

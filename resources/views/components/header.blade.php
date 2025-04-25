@@ -1,5 +1,5 @@
 
-<header class="navbar sticky-top flex-md-nowrap p-0 bg-fondo background-body border-bottom">
+<header class="navbar mt-3 sticky-top flex-md-nowrap p-0 bg-fondo background-body border-bottom">
     <div class="col-8 col-md-3 col-lg-2 me-0 px-3 fs-6 border-end border-sm-0 ">
         <div class="row d-flex align-items-center py-2">
             <div class="col-3 col-md-4">
