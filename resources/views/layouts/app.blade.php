@@ -17,6 +17,8 @@
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.hugeicons.com/font/hgi-stroke-rounded.css" />
+    <!-- Incluir biblioteca de iconos -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
 
     <style>
 
@@ -13967,7 +13969,7 @@
     </style>
     <style>
         .background-body{
-    background-color: var(--body-bg-color-rgb);
+        background-color: var(--body-bg-color-rgb);
         }
         /* Custom styles for notification panel */
         .notification-panel {
@@ -14438,7 +14440,9 @@
         .btn-edit {
             background-color: #4caf50;
         }
-
+        .btn-edit:hover {
+            background-color: #4caf01;
+        }
         .btn-delete {
             background-color: #f44336;
         }

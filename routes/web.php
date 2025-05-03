@@ -6,7 +6,10 @@ use App\Http\Controllers\CustomerController;
 use App\Http\Controllers\LoanController;
 use App\Http\Controllers\OtherIncomeController;
 use App\Http\Controllers\PaymentController;
+
 use App\Http\Controllers\RequestController;
+
+
 use App\Http\Controllers\WalletController;
 use Illuminate\Support\Facades\Route;
 
@@ -26,7 +29,7 @@ Route::get('/', function () {
 });
 
 Auth::routes();
-
+Route::group(['middleware' => ['auth']], function() {
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/all-notifications', 'HomeController@allNotifications')->name('all-notifications');
 //
@@ -43,3 +46,7 @@ Route::get('/cajas',[BoxController::class,'index']);
 Route::get('/gastos',[BillController::class,'index']);
 Route::get('/otros-ingresos',[OtherIncomeController::class,'index']);
 Route::get('/cartera',[WalletController::class,'index']);
+Route::resource('roles', RoleController::class);
+    Route::resource('permissions',PermissionController::class);
+    Route::resource('users',UserController::class);
+});
